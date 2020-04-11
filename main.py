@@ -24,7 +24,7 @@ def load_config(args):
         cfg[key.lower()] = value
 
     for key, value in vars(args).items():
-        if value is None:
+        if key.lower() in cfg:
             continue
         cfg[key.lower()] = value
 
@@ -37,7 +37,7 @@ def main():
     parser.add_argument("--exp-name", default="",
                         help="Name of the experiment")
 
-    parser.add_argument("--logs-dir", default=None,
+    parser.add_argument("--logs-dir", default="logs",
                         help="Directory for storing logs")
 
     parser.add_argument("--config-file", default=None,
