@@ -36,7 +36,7 @@ def load_config(args):
 def main(nbargs=()):
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("--exp-name", default="",
+    parser.add_argument("--exp-name", default="default",
                         help="Name of the experiment")
 
     parser.add_argument("--logs-dir", default="logs",
