@@ -33,7 +33,7 @@ def load_config(args):
     return edict(cfg)
 
 
-def main(nbargs=None):
+def main(nbargs=()):
     parser = argparse.ArgumentParser()
 
     parser.add_argument("--exp-name", default="",
@@ -45,10 +45,11 @@ def main(nbargs=None):
     parser.add_argument("--config-file", default=None,
                         help="Path to config.yml")
 
-    if nbargs is None:
-        args = parser.parse_args()
-    else:
+    try:
+        _ = get_ipython().__class__.__name__
         args = parser.parse_args(nbargs)
+    except NameError:
+        args = parser.parse_args()
 
     cfg = load_config(args)
 
