@@ -1,8 +1,10 @@
 import argparse
 from pathlib import Path
+import time
 
 from easydict import EasyDict as edict
 import yaml
+from tqdm.auto import tqdm
 
 from utils.log import Logger
 
@@ -54,6 +56,10 @@ def main():
     for key, value in cfg.items():
         logger.info("{:25s}:\t{:s}".format(str(key), str(value)))
     logger.info("-" * 50)
+
+    for i in tqdm(range(5)):
+        logger.info("Info message {:d}".format(i))
+        time.sleep(0.5)
 
 
 if __name__ == "__main__":
