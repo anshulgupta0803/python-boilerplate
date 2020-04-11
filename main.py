@@ -65,6 +65,8 @@ def main(nbargs=()):
         logger.info("Info message {:d}".format(i))
         time.sleep(0.5)
 
+    return cfg
+
 
 if __name__ == "__main__":
     main()
