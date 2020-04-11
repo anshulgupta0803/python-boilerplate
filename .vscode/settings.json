@@ -1,0 +1,12 @@
+{
+  "python.pythonPath": "venv\\Scripts\\python.exe",
+  "python.linting.pylintArgs": [
+    "--disable=C0114", // missing-module-docstring
+    "--disable=C0115", // missing-class-docstring
+    "--disable=C0116", // missing-function-docstring
+    "--disable=E1101" // no-member
+  ],
+  "python.linting.enabled": true,
+  "editor.formatOnSave": true,
+  "python.linting.pylintEnabled": true
+}
